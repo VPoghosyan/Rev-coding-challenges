@@ -5,5 +5,29 @@ const getHashTags = (t) => {
   
 }
 
+###############
 
+# Java
+
+public class RevCoding {
+	
+	public static String MemorySize(String ms) {
+		float i = Float.parseFloat(ms.substring(0, ms.length()-2));
+		
+		if(ms.substring(ms.length()-2).equals("GB")) {
+			
+			
+			return i>1.075? String.format("%.2f", i*0.93)+"GB":
+				Math.round(i*0.93*1000)+"MB";
+		} 
+		
+		return Math.round(i*0.93) +"MB";
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		System.out.println(MemorySize("1.4GB"));
+	}
+}
 
