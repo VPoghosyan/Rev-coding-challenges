@@ -1,0 +1,9 @@
+# JavaScript
+
+const getHashTags = (t) => {
+	return t.split(" ").sort((a,b)=>  b.length - a.length ).slice(0,3).map(e => e="#".repeat(e.length) )
+  
+}
+
+
+
