@@ -11,7 +11,7 @@ const getHashTags = (t) => {
 
 public class RevCoding {
 	
-	public static String MemorySize(String ms) {
+	public static String actualMemorySize(String ms) {
 		float i = Float.parseFloat(ms.substring(0, ms.length()-2));
 		
 		if(ms.substring(ms.length()-2).equals("GB")) {
@@ -27,7 +27,11 @@ public class RevCoding {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(MemorySize("1.4GB"));
+		System.out.println(actualMemorySize("32GB"));// "29.76GB"
+
+		System.out.println(actualMemorySize("2GB")); //  "1.86GB"
+
+		System.out.println(actualMemorySize("512MB")); // "476MB"
 	}
 }
 
