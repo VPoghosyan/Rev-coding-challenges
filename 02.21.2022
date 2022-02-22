@@ -1,0 +1,76 @@
+/////Java
+
+package revChallenges;
+
+import java.text.DecimalFormat;
+import java.util.*;
+import java.util.stream.IntStream;
+
+public class RevCoding {
+	
+
+		public static String isPandigital(String sB) {
+		StringBuilder isPen = new StringBuilder("yes");
+		boolean isPend = true;
+		IntStream intStream = IntStream.range(1,10);
+		
+	      intStream.forEach((i)->{
+	    	  
+	    	  
+	    	  if(!sB.contains(i+"")) {
+	    		  isPen.setLength(0);
+	    		  isPen.append("no");
+	    		  
+	    	  }
+	    	  
+	      });
+	      
+	      
+	      return isPen.toString();
+	}
+	
+	public static String panDecimal() {
+		StringBuilder finalNum = new StringBuilder("");
+		for (long i = 9876; i > 9123 ; i--) {
+			String nums = i + "" + 2*i;
+			
+			
+		    if(isPandigital(nums).equals("yes")){
+		    	finalNum.append(nums);
+		    	break;
+		       
+		    }
+		    
+		}
+		
+		return finalNum.toString();
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		
+		System.out.println(panDecimal());//932718654
+		
+		
+	}
+}
+
+
+
+/////JavaScript
+
+const colorTime = (col) => {
+  	let time = 0;
+	col.map((c,i)=> i>0 && col[i-1]!==c? time++:'' );
+  	return col.length?  time+=col.length*2: "empty array";
+}
+console.log(colorTime(["Red", "Blue", "Red", "Blue", "Red"]))//14
+console.log(colorTime(["Red"]))//2
+console.log(colorTime(["Red", "Yellow", "Green", "Blue"]))//11
+console.log(colorTime(["Blue", "Blue", "Blue", "Red", "Red", "Red"]))//13
+
+
+
+
+
